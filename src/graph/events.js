@@ -5,7 +5,7 @@ export default config => selection => {
     } = config
 
     let events = selection.selectAll('g.event').data(selection.data()[0][0])
-    
+
     let g = events
         .enter()
         .append('g')
@@ -16,7 +16,7 @@ export default config => selection => {
     g.append('rect')
         .attr('width', d => d.end ? timeScale(d.end)-timeScale(d.start) : 10)
         .attr('height', 20)
-        .attr('fill', 'rgba(85, 187, 238, 0.2)')
+        .attr('fill', d => d.color)
         .attr('ry', 6)
 
     g.append('text')

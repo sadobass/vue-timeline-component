@@ -25,8 +25,13 @@ export default {
                         left: 15,
                         right: 15
                     },
-                    //onEventClick: click
+                    onEventClick: this.click2
                 }))
+    },
+    methods: {
+        click2(d) {
+            console.log(d)
+        }
     }
 }
 </script>
